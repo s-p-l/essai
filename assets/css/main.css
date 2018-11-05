@@ -35,6 +35,9 @@ flex-direction: column;
 height: 1500px;
 justify-content: space-between}
 
+.arrow-l{}
+.arrow-r{}
+
 body {
 	line-height: 1;
 }
