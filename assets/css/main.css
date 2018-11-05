@@ -29,7 +29,11 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
-.styley{height:400px;}
+.styley{height: 1500px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
 
 .arrow-l{height: 400px;}
 .arrow-r{height: 400px;}
