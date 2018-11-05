@@ -28,16 +28,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		shared: true
 	},
 	data:[{
-		type: "stackedBar100",
-		toolTipContent: "{label}<br><b>{name}:</b> {y} (#percent%)",
-		showInLegend: true, 
-		name: "April",
-		dataPoints: [
-			{ y: 600, label: "Churn" },
-			{ y: 400, label: "No churn" }
-		]
-		},
-		{
 			type: "stackedBar100",
 			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
 			showInLegend: true, 
