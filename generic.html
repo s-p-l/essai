@@ -10,73 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>
-		var ctx = document.getElementById('chart1');
-
-var chart = new CanvasJS.Chart(ctx, {
-	animationEnabled: true,
-	theme: "light2", //"light1", "dark1", "dark2"
-	title:{
-		text: "Division of Products Sold in 2nd Quarter"             
-	},
-	axisY:{
-		interval: 10,
-		suffix: "%"
-	},
-	toolTip:{
-		shared: true
-	},
-	data:[{
-		type: "stackedBar100",
-		toolTipContent: "{label}<br><b>{name}:</b> {y} (#percent%)",
-		showInLegend: true, 
-		name: "April",
-		dataPoints: [
-			{ y: 600, label: "Water Filter" },
-			{ y: 400, label: "Modern Chair" },
-			{ y: 120, label: "VOIP Phone" },
-			{ y: 250, label: "Microwave" },
-			{ y: 120, label: "Water Filter" },
-			{ y: 374, label: "Expresso Machine" },
-			{ y: 350, label: "Lobby Chair" }
-		]
-		},
-		{
-			type: "stackedBar100",
-			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
-			showInLegend: true, 
-			name: "May",
-			dataPoints: [
-				{ y: 400, label: "Water Filter" },
-				{ y: 500, label: "Modern Chair" },
-				{ y: 220, label: "VOIP Phone" },
-				{ y: 350, label: "Microwave" },
-				{ y: 220, label: "Water Filter" },
-				{ y: 474, label: "Expresso Machine" },
-				{ y: 450, label: "Lobby Chair" }
-			]
-		}, 
-		{
-			type: "stackedBar100",
-			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
-			showInLegend: true, 
-			name: "June",
-			dataPoints: [
-				{ y: 300, label: "Water Filter" },
-				{ y: 610, label: "Modern Chair" },
-				{ y: 215, label: "VOIP Phone" },
-				{ y: 221, label: "Microwave" },
-				{ y: 75, label: "Water Filter" },
-				{ y: 310, label: "Expresso Machine" },
-				{ y: 340, label: "Lobby Chair" }
-			]
-	}]
-});
-chart.render();
-
-}
-</script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>		
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -118,9 +52,42 @@ chart.render();
 						<div class="inner">
 							<h1>Generic Page</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<canvas id="chart1"></canvas>
-							<div id="chart1" style="height: 300px; width: 100%;"></div>
-							<script src="https://github.com/s-p-l/essai/blob/master/d3.js" type="text/javascript"></script>
+							<canvas id="chart"></canvas>
+							<script src="https://github.com/s-p-l/essai/blob/master/d3.min.js"></script>
+							<script>
+  							var ctx = document.getElementById('chart');
+							var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Risk Level'],
+    datasets: [
+      {
+        label: 'Low',
+        data: [67.8],
+        backgroundColor: '#D6E9C6',
+      },
+      {
+        label: 'Moderate',
+        data: [20.7],
+        backgroundColor: '#FAEBCC',
+      },
+      {
+        label: 'High',
+        data: [11.4],
+        backgroundColor: '#EBCCD1',
+      }
+    ]
+  },
+  options: {
+    scales: {
+      xAxes: [{ stacked: true }],
+      yAxes: [{ stacked: true }]
+    }
+  }
+});
+
+
+							</script>
 							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
 							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
