@@ -159,6 +159,25 @@ chart.render();
 
 }
 </script>
+		<script>
+			var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+}
+</script>			
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -208,6 +227,8 @@ chart.render();
 								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 								<div id="chart_tenure" style="height: 300px; width: 100%;"></div>
 								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								<button class="arrow-l" onclick="plusDivs(-1)">&#10094;</button>
+								<button class="arrow-r" onclick="plusDivs(+1)">&#10095;</button>
 							</div>
 							<p> Analytics: churn prediction </p>
 							
