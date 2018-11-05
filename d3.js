@@ -1,5 +1,7 @@
 //Graphique 1
-var chart = new CanvasJS.Chart("chartContainer", {
+var ctx = document.getElementById('chart1');
+
+var chart = new CanvasJS.Chart(ctx, {
 	animationEnabled: true,
 	theme: "light2", //"light1", "dark1", "dark2"
 	title:{
