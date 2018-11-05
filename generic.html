@@ -52,6 +52,47 @@ chart.render();
 
 }
 </script>
+		<script>
+			window.onload = function () {
+
+var chart = new CanvasJS.Chart("chart_senior", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Churn by age category"             
+	},
+	axisY:{
+		interval: 10,
+		suffix: "%"
+	},
+	toolTip:{
+		shared: true
+	},
+	data:[{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Senior",
+			dataPoints: [
+				{ y: 440, label: "Churn" },
+				{ y: 1650, label: "No churn" }
+			]
+		}, 
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Not senior",
+			dataPoints: [
+				{ y: 589, label: "Churn" },
+				{ y: 1700, label: "No churn" }
+			]
+	}]
+});
+chart.render();
+
+}
+</script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -94,6 +135,7 @@ chart.render();
 							<h1>Generic Page</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
 							<div id="chart_gender" style="height: 300px; width: 100%;"></div>
+							<div id="chart_senior" style="height: 300px; width: 100%;"></div>
 							<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 							<p> Analytics: churn prediction </p>
 	</body>
