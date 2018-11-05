@@ -29,14 +29,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
-.styley{
-display: flex;
-flex-direction: column;
-height: 1500px;
-justify-content: space-between}
+.styley{height:400px;}
 
-.arrow-l{}
-.arrow-r{}
+.arrow-l{height: 400px;}
+.arrow-r{height: 400px;}
 
 body {
 	line-height: 1;
