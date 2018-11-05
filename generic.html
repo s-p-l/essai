@@ -10,7 +10,72 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>		
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Division of Products Sold in 2nd Quarter"             
+	},
+	axisY:{
+		interval: 10,
+		suffix: "%"
+	},
+	toolTip:{
+		shared: true
+	},
+	data:[{
+		type: "stackedBar100",
+		toolTipContent: "{label}<br><b>{name}:</b> {y} (#percent%)",
+		showInLegend: true, 
+		name: "April",
+		dataPoints: [
+			{ y: 600, label: "Water Filter" },
+			{ y: 400, label: "Modern Chair" },
+			{ y: 120, label: "VOIP Phone" },
+			{ y: 250, label: "Microwave" },
+			{ y: 120, label: "Water Filter" },
+			{ y: 374, label: "Expresso Machine" },
+			{ y: 350, label: "Lobby Chair" }
+		]
+		},
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "May",
+			dataPoints: [
+				{ y: 400, label: "Water Filter" },
+				{ y: 500, label: "Modern Chair" },
+				{ y: 220, label: "VOIP Phone" },
+				{ y: 350, label: "Microwave" },
+				{ y: 220, label: "Water Filter" },
+				{ y: 474, label: "Expresso Machine" },
+				{ y: 450, label: "Lobby Chair" }
+			]
+		}, 
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "June",
+			dataPoints: [
+				{ y: 300, label: "Water Filter" },
+				{ y: 610, label: "Modern Chair" },
+				{ y: 215, label: "VOIP Phone" },
+				{ y: 221, label: "Microwave" },
+				{ y: 75, label: "Water Filter" },
+				{ y: 310, label: "Expresso Machine" },
+				{ y: 340, label: "Lobby Chair" }
+			]
+	}]
+});
+chart.render();
+
+}
+</script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -52,161 +117,9 @@
 						<div class="inner">
 							<h1>Generic Page</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<canvas id="chart"></canvas>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
-							<script>
-  							var ctx = document.getElementById('chart');
-							var myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Risk Level'],
-    datasets: [
-      {
-        label: 'Low',
-        data: [67.8],
-        backgroundColor: '#D6E9C6',
-      },
-      {
-        label: 'Moderate',
-        data: [20.7],
-        backgroundColor: '#FAEBCC',
-      },
-      {
-        label: 'High',
-        data: [11.4],
-        backgroundColor: '#EBCCD1',
-      }
-    ]
-  },
-  options: {
-    scales: {
-      xAxes: [{ stacked: true }],
-      yAxes: [{ stacked: true }]
-    }
-  }
-});
-
-
+							<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js">
 							</script>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-    chart = {
-  const root = pack(data);
-  
-  const svg = d3.select(DOM.svg(width, height))
-      .style("width", "100%")
-      .style("height", "auto")
-      .attr("font-size", 10)
-      .attr("font-family", "sans-serif")
-      .attr("text-anchor", "middle");
-
-  const leaf = svg.selectAll("g")
-    .data(root.leaves())
-    .enter().append("g")
-      .attr("transform", d => `translate(${d.x + 1},${d.y + 1})`);
-
-  leaf.append("circle")
-      .attr("id", d => (d.leafUid = DOM.uid("leaf")).id)
-      .attr("r", d => d.r)
-      .attr("fill-opacity", 0.7)
-      .attr("fill", d => color(d.data.group));
-
-  leaf.append("clipPath")
-      .attr("id", d => (d.clipUid = DOM.uid("clip")).id)
-    .append("use")
-      .attr("xlink:href", d => d.leafUid.href);
-
-  leaf.append("text")
-      .attr("clip-path", d => d.clipUid)
-    .selectAll("tspan")
-    .data(d => d.data.name.split(/(?=[A-Z][^A-Z])/g))
-    .enter().append("tspan")
-      .attr("x", 0)
-      .attr("y", (d, i, nodes) => `${i - nodes.length / 2 + 0.8}em`)
-      .text(d => d);
-
-  leaf.append("title")
-      .text(d => `${d.data.title}\n${format(d.value)}`);
-    
-  return svg.node();
-}
-data = d3.hierarchy(await require("@observablehq/flare"))
-  .leaves()
-  .map(d => {
-    let p = d;
-    while (p.depth > 1) p = p.parent;
-    d.data.title = d.ancestors().reverse().map(a => a.data.name).join("/");
-    d.data.group = p.data.name;
-    return d;
-  })
-  .map(d => d.data)
-  .sort((a, b) => a.group.localeCompare(b.group))
-  .map(({name, title, group, size}) => ({name, title, group, value: size}))
-pack = data => d3.pack()
-    .size([width - 2, height - 2])
-    .padding(3)
-  (d3.hierarchy({children: data})
-    .sum(d => d.value))
-width = 932
-height = width
-format = d3.format(",d")
-color = d3.scaleOrdinal().range(d3.schemeCategory10)
-d3 = require("d3@5")
-		</script>
 
 	</body>
 </html>
