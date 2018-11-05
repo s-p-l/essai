@@ -29,6 +29,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+.w3-content w3-display-container{
+display: flex;
+flex-direction: column;}
+
 body {
 	line-height: 1;
 }
