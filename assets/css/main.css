@@ -35,9 +35,6 @@ flex-direction: column;
 justify-content: space-between;
 }
 
-.arrow-l{height: 400px;}
-.arrow-r{height: 400px;}
-
 body {
 	line-height: 1;
 }
